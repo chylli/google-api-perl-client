@@ -5,6 +5,9 @@ use Google::API::Client;
 
 my $service = Google::API::Client->new->build('plus', 'v1');
 ok($service);
+my $service = Google::API::Client->new->build('plus', 'v1',undef, 1);
+ok($service);
+
 is(ref(Google::API::Client->_new_ua), 'LWP::UserAgent');
 is(ref(Google::API::Client->_new_json_parser), 'JSON');
 
